@@ -13,42 +13,51 @@
  */
 
 // function kiemTraThuTuSo (a ,b ,c) {
-    var a =5;
-    var b =5;
-    var c =5;
+    var t1 ;
+    var t2 ;
+    var t3 ;
+document.getElementById("btnKiemTraSo").onclick =function (){
+            var a = document.getElementById("txtNumber").value;
+            var b = document.getElementById("txtNumber1").value;
+            var c = document.getElementById("txtNumber2").value;
+            
+            if (a <= b && b <= c) {
+                t1 = c;
+                t2 = b;
+                t3 = a;
+            }else if (a >= b && b >= c ) {
+                t1 = a;
+                t2 = b;
+                t3 = c;
+            }else if (a <= b && b >= c){
+                if ( a < c){
+                    t1 =b;
+                    t2 =c;
+                    t3 =a;
+                }else {
+                    t1 =b;
+                    t2 =a;
+                    t3 =c;
+                }
+            }else if (a >= b && b <= c) {
+                if (a < c) {
+                    t1 = c; 
+                    t2 = a;
+                    t3 = b;
+                }
+                else {
+                    t1= a;
+                    t2= c;
+                    t3= b;
+                }
+            }
+            var ketQua = " Tăng Dần: " + t3 + " " + t2 + " " +t1 ;
+            document.getElementById("footerCheckNumber").innerHTML=ketQua;
+            
+}   
+
     
-    if (a <= b && b <= c) {
-        t1 = c;
-        t2 = b;
-        t3 = a;
-    }else if (a >= b && b >= c ) {
-        t1 = a;
-        t2 = b;
-        t3 = c;
-    }else if (a <= b && b >= c){
-        if ( a < c){
-            t1 =b;
-            t2 =c;
-            t3 =a;
-        }else {
-            t1 =b;
-            t2 =a;
-            t3 =c;
-        }
-    }else if (a >= b && b <= c) {
-        if (a < c) {
-            t1 = c; 
-            t2 = a;
-            t3 = b;
-        }
-        else {
-            t1= a;
-            t2= c;
-            t3= b;
-        }
-    }
-    
-    console.log(" Tăng Dần: " + t3 + " " + t2 + " " +t1) ;
+    // console.log(" Tăng Dần: " + t3 + " " + t2 + " " +t1) ;
 //    return " Tăng Dần: " + t3 + " " + t2 + " " +t1;
 // }
 // document.getElementById("btnKiemTraSo").onclick =function (){
@@ -74,21 +83,24 @@
  * - Em ( E ) : Chào Em 
  * Đầu ra : Show kết quả
  */
-
-    var boSuDungMayTinh = 1 ;
-    var meSuDungMayTinh = 2 ;
-    var anhSuDungMayTinh = 3 ;
-    var emSuDungMayTinh = 4 ;
-    var nguoiSuDungMayTinh =4 ;
-    if (nguoiSuDungMayTinh == boSuDungMayTinh){
-        console.log("Chào Bố");
-    }else if (nguoiSuDungMayTinh == meSuDungMayTinh){
-        console.log("Chào Mẹ");
-    }else if (nguoiSuDungMayTinh == anhSuDungMayTinh){
-        console.log("Chào Anh");
-    }else { 
-        console.log("Chào Em");
+document.getElementById("btnKiemTraNguoiSuDungMayTinh").onclick = function (){
+    var nguoiSuDungMayTinh = document.getElementById ("txtSuDungMayTinh").value  ;
+    var ketQua ;
+    
+    if (nguoiSuDungMayTinh.toUpperCase () == "B"){
+         ketQua= ("Chào Bố");
+    }else if (nguoiSuDungMayTinh.toUpperCase () == "M"){
+         ketQua=("Chào Mẹ");
+    }else if (nguoiSuDungMayTinh.toUpperCase () == "A"){
+         ketQua=("Chào Anh");
+    }else if(nguoiSuDungMayTinh.toUpperCase () == "E") { 
+         ketQua=("Chào Em");
+    }else {
+        ketQua = ("Không Biết")
     }
+    document.getElementById("footerCheckNguoiSuDungMayTinh").innerHTML = ketQua;
+}
+    
     
     
 /**
@@ -103,44 +115,32 @@
  * Đầu ra : Show kết quả
  */
 
-var soNguyen1 = 1
-var soNguyen2 = 21
-var soNguyen3 = 32
 
-if (soNguyen1 % 2 === 0){
-    var soLe1 = 0 ;
-    var soChan1 = 0 ;
-    soChan1 = soChan1 + 1; 
-}else {
-    var soLe1 = 0 ;
-    var soChan1 = 0 ;
-    soLe1 = soLe1 + 1;
-}
-if (soNguyen2 % 2 === 0){
-    var soLe2 = 0 ;
-    var soChan2 = 0 ;
-    soChan2 = soChan2 + 1; 
-}else {
-    var soLe2 = 0 ;
-    var soChan2 = 0 ;
-    soLe2 = soLe2 + 1;
-}
-if (soNguyen3 % 2 === 0){
-    var soLe3 = 0 ;
-    var soChan3 = 0 ;
-    soChan3 = soChan3 + 1; 
-}else {
-    var soLe3 = 0 ;
-    var soChan3 = 0 ;
-    soLe3 = soLe3 + 1;
-}
-var tongCacSoChan = soChan1 + soChan2 + soChan3 ;
-var tongCacSoLe = soLe1 + soLe2 + soLe3 ;
-
-console.log("Tổng Các Số Chẵn Là : " + tongCacSoChan);
-console.log("Tổng Các Số Lẻ Là : " + tongCacSoLe);
+document.getElementById("btnKiemTraChanLe").onclick= function (){
+    var soThu1 = document.getElementById("soThu1").value;
+    var soThu2 = document.getElementById("soThu2").value;
+    var soThu3 = document.getElementById("soThu3").value;
+    var count_1 = 0;
+    var count_2 = 0;
+    if (soThu1 % 2 === 0){
+        count_1 = count_1 + 1;
+    }else{
+        count_2 = count_2 + 1;
+    }
+    if (soThu2 % 2 === 0){
+        count_1 = count_1 + 1; 
+    }else{
+        count_2 = count_2 + 1;
+    }
+    if (soThu3 % 2 === 0){
+        count_1 = count_1 + 1;
+    } else {
+        count_2 = count_2 + 1;
+    }
+    var ketQua = "Tổng Các Số Chẵn Là : " + count_1 +"</br>"+ "Tổng Các Số Lẻ Là : " + count_2 ;
     
-
+    document.getElementById ("footerCheckChanLe").innerHTML = ketQua ;
+}
 
 
 
@@ -154,39 +154,31 @@ console.log("Tổng Các Số Lẻ Là : " + tongCacSoLe);
  * - Tạo biến cho người dùng nhập vào 3 cạnh của tam giác ( a , b , c)
  * - So sánh các trường hợp có thể xảy ra
  * - VD :
- * - (a == b && b != c) => Tam Giác Cân
+ * - (a == b || a == c || b == c )) => Tam Giác Cân
  * - (a == b && b == c ) => Tam Giác Đều
- * - (a != b && b != c) => Tam Giác Vuông
+ * - (a2== b2 + c2 || b2 == a2 + c2 || c2 == a2 +b2)) => Tam Giác Vuông
  * Đầu ra : Show kết quả
  */
 
 
-// function kiemTraTamGiac (a, b,  c) {
-    var a =3 ;
-    var b =3 ;
-    var c= 2 ;
-    if (a == b && b != c) {
-        console.log("Đây Là Tam Giác Cân");  
-    }else if (a == c && a != b){
-        console.log("Đây Là Tam Giác Cân"); 
-    }else if (b == c && a != b){
-        console.log("Đây Là Tam Giác Cân"); 
+document.getElementById("btnKiemTraTamGiac").onclick = function (){
+    var a = document.getElementById("txtCanhA").value || 0;
+    var b = document.getElementById("txtCanhB").value || 0 ;
+    var c = document.getElementById("txtCanhC").value || 0;
+    var a2 = a*a ;
+    var b2 = b*b ;
+    var c2 = c*c ;
+    var ketQua = ("Đây Là Tam Giác Bình Thường");
+    if (a <= 0 || b <= 0 || c <= 0) {
+        ketQua = ("Đây Không Phải Là Tam Giác"); 
+    }else if (a == b || a == c || b == c ) {
+         ketQua = ("Đây Là Tam Giác Cân");  
     }else if (a== b && b == c ) {
-        console.log("Đây Là Tam Giác Đều"); 
-    }else if (a != b && b != c) {
-        console.log("Đây Là Tam Giác Vuông");
-    }else if (a != b && a != c ){
-        console.log("Đây Là Tam Giác Vuông");
+         ketQua = ("Đây Là Tam Giác Đều"); 
+    }else if (a2== b2 + c2 || b2 == a2 + c2 || c2 == a2 +b2) {
+         ketQua = ("Đây Là Tam Giác Vuông"); 
     }
+    document.getElementById("footerCheckTamGiac").innerHTML = ketQua ;
+}
     
-// }
-
-//  document.getElementById("btnKiemTraTamGiac").onclick =function (){
-//     var a = document.getElementById("txtCanhA").value;
-//     var b = document.getElementById("txtCanhB").value;
-//     var c = document.getElementById("txtCanhC").value;
-//     var status = kiemTraTamGiac(a, b, c);
-//     var footer = document.getElementById("footerCheckTamGiac");
-//     footer.innerHTML = status;
-    
-// }
+ 
