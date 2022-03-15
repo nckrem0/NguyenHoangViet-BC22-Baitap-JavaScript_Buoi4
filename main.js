@@ -13,9 +13,7 @@
  */
 
 // function kiemTraThuTuSo (a ,b ,c) {
-    var t1 ;
-    var t2 ;
-    var t3 ;
+    
 document.getElementById("btnKiemTraSo").onclick =function (){
             var a = document.getElementById("txtNumber").value;
             var b = document.getElementById("txtNumber1").value;
